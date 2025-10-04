@@ -1,7 +1,6 @@
 import numpy as np
 
 
-
 def get_matrix(n: int, m: int) -> np.ndarray:
     """Create random matrix n * m.
 
@@ -14,6 +13,8 @@ def get_matrix(n: int, m: int) -> np.ndarray:
     """
     return np.random.rand(n, m)
 
+#приклад виклика функції 
+print(get_matrix(3, 4))
 
 
 def add(x: np.ndarray, y: np.ndarray) -> np.ndarray:
