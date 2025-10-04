@@ -29,7 +29,7 @@ def add(x: np.ndarray, y: np.ndarray) -> np.ndarray:
     """
     return x + y
 
-#приклад використання цієї функції
+#приклад використання функції
 a = np.array([[1, 2], [3, 4]])
 b = np.array([[5, 6], [7, 8]])
 #print(add(a, b))
@@ -64,16 +64,12 @@ def dot_product(x: np.ndarray, y: np.ndarray) -> np.ndarray:
     Returns:
         np.ndarray: dot product.
     """
-    return np.dot(x, y) #
+    return x @ y 
 
 #приклад використання цієї функції
-# матриця 2 х 3 
-x = np.array([[1, 2, 3],[4, 5, 6]])
-
-# вектор довжиною 3
-y = np.array([7, 8, 9])
-
-
+x = np.array([[1, 2, 3],[4, 5, 6]]) # матриця 2 х 3 
+y = np.array([7, 8, 9]) # вектор довжиною 3
+#print(dot_product(x,y))
 
 
 def identity_matrix(dim: int) -> np.ndarray:
@@ -85,8 +81,10 @@ def identity_matrix(dim: int) -> np.ndarray:
     Returns:
         np.ndarray: identity matrix.
     """
-    raise NotImplementedError
+    return np.eye(dim) #створює матрицю розміром dim × dim, де на головній діагоналі стоять одиниці
 
+#приклад використання функції
+#print(identity_matrix(4))
 
 def matrix_inverse(x: np.ndarray) -> np.ndarray:
     """Compute inverse matrix.
@@ -97,7 +95,20 @@ def matrix_inverse(x: np.ndarray) -> np.ndarray:
     Returns:
         np.ndarray: inverse matrix.
     """
-    raise NotImplementedError
+    # перевірка чи матриця є квадратною
+    if x.shape[0] != x.shape[1]:
+        raise ValueError("Матриця повинна бути квадратною.")
+
+    # перевірка на невиродженість (визначник не дорівнює 0)
+    det = np.linalg.det(x)
+    if det == 0:
+        raise ValueError("Матриця є виродженою (визначник = 0), обернена не існує.")
+
+    return np.linalg.inv(x) # повертає обернену матрицю
+
+# приклад використання функції
+x = np.array([[2, 1], [5, 3]])
+#print(matrix_inverse(x))
 
 
 def matrix_transpose(x: np.ndarray) -> np.ndarray:
@@ -109,7 +120,11 @@ def matrix_transpose(x: np.ndarray) -> np.ndarray:
     Returns:
         np.ndarray: transosed matrix.
     """
-    raise NotImplementedError
+    return x.T #повертає транспоновану матрицю
+
+#приклад використання функції
+x= np.array([[1, 2, 3],[4, 5, 6]])
+#print(matrix_transpose(x))
 
 
 def hadamard_product(x: np.ndarray, y: np.ndarray) -> np.ndarray:
@@ -122,7 +137,16 @@ def hadamard_product(x: np.ndarray, y: np.ndarray) -> np.ndarray:
     Returns:
         np.ndarray: hadamard produc
     """
-    raise NotImplementedError
+    #перевірка чи обидві матриці мають однакову форму
+    if x.shape != y.shape:
+        raise ValueError("Матриці повинні мати однакові розміри для Адамарового добутку.")
+    
+    return x * y #перемножує відповідні елементи двох матриць
+
+#приклад використання функції
+x = np.array([[1, 2], [3, 4]])
+y = np.array([[5, 6], [7, 8]])
+#print(hadamard_product(x, y))
 
 
 def basis(x: np.ndarray) -> tuple[int]:
