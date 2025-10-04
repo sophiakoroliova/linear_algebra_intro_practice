@@ -13,8 +13,8 @@ def get_matrix(n: int, m: int) -> np.ndarray:
     """
     return np.random.rand(n, m)
 
-#приклад виклика функції 
-print(get_matrix(3, 4))
+#приклад виклика цієї функції 
+#print(get_matrix(3, 4))
 
 
 def add(x: np.ndarray, y: np.ndarray) -> np.ndarray:
@@ -27,7 +27,12 @@ def add(x: np.ndarray, y: np.ndarray) -> np.ndarray:
     Returns:
         np.ndarray: matrix sum.
     """
-    raise NotImplementedError
+    return x + y
+
+#приклад використання цієї функції
+#a = np.array([[1, 2], [3, 4]])
+#b = np.array([[5, 6], [7, 8]])
+#print(add(a, b))
 
 
 def scalar_multiplication(x: np.ndarray, a: float) -> np.ndarray:
