@@ -50,7 +50,7 @@ def scalar_multiplication(x: np.ndarray, a: float) -> np.ndarray:
 #приклад використання функції
 x = np.array([[1, 2], [3, 4]])
 a = 2.5
-result = scalar_multiplication(matrix, scalar)
+result = scalar_multiplication(x, a)
 #print(result)
 
 
