@@ -13,7 +13,7 @@ def get_matrix(n: int, m: int) -> np.ndarray:
     """
     return np.random.rand(n, m)
 
-#приклад виклика цієї функції 
+#приклад використання функції 
 #print(get_matrix(3, 4))
 
 
@@ -30,8 +30,8 @@ def add(x: np.ndarray, y: np.ndarray) -> np.ndarray:
     return x + y
 
 #приклад використання цієї функції
-#a = np.array([[1, 2], [3, 4]])
-#b = np.array([[5, 6], [7, 8]])
+a = np.array([[1, 2], [3, 4]])
+b = np.array([[5, 6], [7, 8]])
 #print(add(a, b))
 
 
@@ -45,7 +45,13 @@ def scalar_multiplication(x: np.ndarray, a: float) -> np.ndarray:
     Returns:
         np.ndarray: multiplied matrix.
     """
-    raise NotImplementedError
+    return x * a #перемножуємо кожен елемент матриці x на скаляр a
+
+#приклад використання функції
+x = np.array([[1, 2], [3, 4]])
+a = 2.5
+result = scalar_multiplication(matrix, scalar)
+#print(result)
 
 
 def dot_product(x: np.ndarray, y: np.ndarray) -> np.ndarray:
@@ -58,7 +64,16 @@ def dot_product(x: np.ndarray, y: np.ndarray) -> np.ndarray:
     Returns:
         np.ndarray: dot product.
     """
-    raise NotImplementedError
+    return np.dot(x, y) #
+
+#приклад використання цієї функції
+# матриця 2 х 3 
+x = np.array([[1, 2, 3],[4, 5, 6]])
+
+# вектор довжиною 3
+y = np.array([7, 8, 9])
+
+
 
 
 def identity_matrix(dim: int) -> np.ndarray:
