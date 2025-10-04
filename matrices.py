@@ -1,5 +1,5 @@
 import numpy as np
-
+from sympy import Matrix
 
 def get_matrix(n: int, m: int) -> np.ndarray:
     """Create random matrix n * m.
@@ -158,8 +158,17 @@ def basis(x: np.ndarray) -> tuple[int]:
     Returns:
         tuple[int]: indexes of basis columns.
     """
-    raise NotImplementedError
+    sympy_matrix = Matrix(x) # перетворення звичайної матриці x (типу np.ndarray) у символьну матрицю з бібліотеки SymPy
+    pivot_columns = sympy_matrix.rref()[1]  # беремо другий елемент результату rref() — тобто індекси опорних стовпців
+    
+    return tuple(pivot_columns)
+    
+#приклад використання функції
+x = np.array([[1, 2, 3],
+              [2, 4, 6],
+              [1, 1, 1]])
 
+#print(basis(x))  
 
 def norm(x: np.ndarray, order: int | float | str) -> float:
     """Matrix norm: Frobenius, Spectral or Max.
@@ -171,4 +180,18 @@ def norm(x: np.ndarray, order: int | float | str) -> float:
     Returns:
         float: vector norm
     """
-    raise NotImplementedError
+    if order == 'fro':
+        return np.linalg.norm(x, 'fro')
+    elif order == 2:
+        return np.linalg.norm(x, 2)
+    elif order == np.inf:
+        return np.linalg.norm(x, np.inf)
+    else:
+        raise ValueError("Невідомий тип норми")
+
+#приклад використання функції
+x = np.array([[1, 2],[3, 4]])
+
+#print(norm(A, 'fro'))   # Frobenius norm
+#print(norm(A, 2))       # Spectral norm
+#print(norm(A, np.inf))  # Max norm
