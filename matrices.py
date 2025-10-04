@@ -1,9 +1,19 @@
 import numpy as np
 
 
+
 def get_matrix(n: int, m: int) -> np.ndarray:
-    """Create random matrix n * m."""
+    """Create random matrix n * m.
+
+    Args:
+        n (int): number of rows.
+        m (int): number of columns.
+
+    Returns:
+        np.ndarray: matrix n*m.
+    """
     return np.random.rand(n, m)
+
 
 
 def add(x: np.ndarray, y: np.ndarray) -> np.ndarray:
