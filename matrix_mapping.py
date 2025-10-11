@@ -100,4 +100,61 @@ def affine_transform(
     Returns:
         np.ndarray: transformed matrix.
     """
-    raise NotImplementedError
+    alpha = np.deg2rad(alpha_deg) # конвертуємо кут у радіани
+
+    # матриця масштабування
+    S = np.array([
+        [scale[0], 0],
+        [0, scale[1]]
+    ])
+
+    # матриця зсуву
+    Sh = np.array([
+        [1, np.tan(np.deg2rad(shear[0]))],
+        [np.tan(np.deg2rad(shear[1])), 1]
+    ])
+
+    # матриця обертання
+    R = np.array([
+        [np.cos(alpha), -np.sin(alpha)],
+        [np.sin(alpha),  np.cos(alpha)]
+    ])
+
+    # повна афінна матриця (без зсуву)
+    A = R @ Sh @ S
+
+    # додаємо трансляцію (зсув)
+    t = np.array(translate)
+
+    # перетворюємо точки
+    if x.ndim == 1:
+        x_transformed = A @ x + t # якщо це один вектор
+    else:
+        x_transformed = (A @ x.T).T + t # якщо це кілька точок (n×2)
+
+    return x_transformed
+
+points = np.array([
+    [0, 0],
+    [1, 0],
+    [0, 1]
+])
+
+transformed = affine_transform(
+    points,
+    alpha_deg=45,
+    scale=(1.2, 0.8),
+    shear=(10, 5),
+    translate=(2, 3)
+)
+
+print(transformed)
+
+"""
+Вивід програми : 
+
+[[2.         1.        ]
+ [2.70710678 1.70710678]
+ [1.29289322 1.70710678]]
+
+"""
