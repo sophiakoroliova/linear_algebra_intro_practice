@@ -10,7 +10,23 @@ def negative_matrix(x: np.ndarray) -> np.ndarray:
     Returns:
         np.ndarray: A matrix with each element negated.
     """
-    raise NotImplementedError
+    # застосовуємо унарний оператор від'ємного числа до всього масиву (NumPy виконує це поелементно)
+    return -x
+
+# Приклад з вектором
+vector = np.array([1, -2, 3, 0])
+neg_vector = negative_matrix(vector)
+print("Вхідний вектор:", vector)
+print("Негативний вектор:", neg_vector)
+
+# Приклад з матрицею
+matrix = np.array([
+    [10, -20],
+    [30, -40]
+])
+neg_matrix = negative_matrix(matrix)
+print("Вхідна матриця:\n", matrix)
+print("Негативна матриця:\n", neg_matrix)
 
 
 def reverse_matrix(x: np.ndarray) -> np.ndarray:
