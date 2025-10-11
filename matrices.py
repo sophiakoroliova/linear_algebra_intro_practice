@@ -192,6 +192,6 @@ def norm(x: np.ndarray, order: int | float | str) -> float:
 #приклад використання функції
 x = np.array([[1, 2],[3, 4]])
 
-#print(norm(A, 'fro'))   # Frobenius norm
-#print(norm(A, 2))       # Spectral norm
-#print(norm(A, np.inf))  # Max norm
+#print(norm(x, 'fro'))   # Frobenius norm
+#print(norm(x, 2))       # Spectral norm
+#print(norm(x, np.inf))  # Max norm
