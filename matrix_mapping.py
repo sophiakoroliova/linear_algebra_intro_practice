@@ -28,6 +28,18 @@ neg_matrix = negative_matrix(matrix)
 print("Вхідна матриця:\n", matrix)
 print("Негативна матриця:\n", neg_matrix)
 
+""" 
+Вивід програми : 
+
+Вхідний вектор: [ 1 -2  3  0]
+Негативний вектор: [-1  2 -3  0]
+Вхідна матриця:
+ [[ 10 -20]
+ [ 30 -40]]
+Негативна матриця:
+ [[-10  20]
+ [-30  40]]
+"""
 
 def reverse_matrix(x: np.ndarray) -> np.ndarray:
     """
@@ -39,8 +51,38 @@ def reverse_matrix(x: np.ndarray) -> np.ndarray:
     Returns:
         np.ndarray: A matrix with the order of elements reversed.
     """
-    raise NotImplementedError
+    # використовуємо вбудовану функцію np.flip(x) що обертає масив вздовж усіх осей
+    # для 1D-вектора функція змінює порядок елементів з кінця на початок 
+    # для 2-D-матриці функція обертає матрицю на 180 градусів (і рядки, і стовпці)
+    return np.flip(x) 
 
+# Приклад з вектором
+vector = np.array([1, -2, 3, 0])
+reversed_vector = reverse_matrix(vector)
+print("Вхідний вектор:", vector)
+print("Обернений вектор:", reversed_vector)
+
+# Приклад з матрицею
+matrix = np.array([
+    [10, -20],
+    [30, -40]
+])
+reversed_matrix = reverse_matrix(matrix)
+print("Вхідна матриця:\n", matrix)
+print("Обернена матриця:\n", reversed_matrix)
+
+"""
+Вивід програми : 
+
+Вхідний вектор: [ 1 -2  3  0]
+Обернений вектор: [ 0  3 -2  1]
+Вхідна матриця:
+ [[ 10 -20]
+ [ 30 -40]]
+Обернена матриця:
+ [[-40  30]
+ [-20  10]]
+"""
 
 def affine_transform(
     x: np.ndarray, alpha_deg: float, scale: tuple[float, float], shear: tuple[float, float],
