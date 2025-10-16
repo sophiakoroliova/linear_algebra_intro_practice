@@ -110,11 +110,11 @@ def affine_transform(
 
     # матриця зсуву
     Sh = np.array([
-        [1, np.tan(np.deg2rad(shear[0]))],
-        [np.tan(np.deg2rad(shear[1])), 1]
+        [1, shear[0]], 
+        [shear[1], 1] 
     ])
 
-    # матриця обертання
+    #матриця обертання
     R = np.array([
         [np.cos(alpha), -np.sin(alpha)],
         [np.sin(alpha),  np.cos(alpha)]
@@ -134,6 +134,7 @@ def affine_transform(
 
     return x_transformed
 
+
 points = np.array([
     [0, 0],
     [1, 0],
@@ -150,11 +151,12 @@ transformed = affine_transform(
 
 print(transformed)
 
+
 """
 Вивід програми : 
 
-[[2.         1.        ]
- [2.70710678 1.70710678]
- [1.29289322 1.70710678]]
+[[  2.           3.        ]
+ [  2.84852814   3.33941125]
+ [ 10.35563492   7.51471863]]
 
 """
