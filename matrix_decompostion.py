@@ -41,7 +41,7 @@ Upper Triangular Matrix U:
  [[ 4. -6.  0.]
  [ 0.  4.  1.]
  [ 0.  0.  1.]]
-PLU multiplication:
+A_recover:
  [[ 2  1  1]
  [ 4 -6  0]
  [-2  7  2]]
