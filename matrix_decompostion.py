@@ -25,7 +25,7 @@ print("Upper Triangular Matrix U:\n", U)
 
 # We can confirm the decomposition is correct by multiplying the obtained matrices (A = U @ P @ L)
 A_recover = np.round(P @ L @ U, 1) 
-print("PLU multiplication:\n", A)
+print("A_recover:\n", A)
 
 """
 Program output:
