@@ -15,7 +15,7 @@ def lu_decomposition(x: np.ndarray) -> tuple[np.ndarray, np.ndarray, np.ndarray]
     P, L, U = lu(x) 
     return P, L, U
 
-# Example Usage:
+# Example usage
 A = np.array([[2, 1, 1], [4, -6, 0], [-2, 7, 2]])
 P, L, U = lu_decomposition(A)
 
@@ -174,7 +174,7 @@ def svd(x: np.ndarray) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
     V = Vt.T
     return U, S, V
 
-# Example Usage:
+# Example usage
 A = np.array([[1, 2], [3, 4], [5, 6]])
 U, S, V = svd(A)
 
