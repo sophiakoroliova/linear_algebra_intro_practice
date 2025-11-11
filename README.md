@@ -22,7 +22,7 @@ Linear (Base): R^2 = 0.4526
 
 Ridge (L2): R^2 = 0.4572
 
-Lasso (L1): R² = 0.4670
+Lasso (L1): R^2 = 0.4670
 
 L1 (Lasso) provided the best performance, slightly edging out L2 and the baseline. It also achieved this while simplifying the model by zeroing out 1 of the 10 features.
 
