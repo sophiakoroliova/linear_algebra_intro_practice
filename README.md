@@ -14,7 +14,8 @@ Please, use NumPy, SciPy, scikit-learn and similar libs to implement the tasks.
 
 ## Lab 5 Conclusions 
 
-###1. Regression (Diabetes)
+1. Regression (Diabetes)
+
 Regularization provided a modest but clear improvement.
 
 Linear (Base): R^2 = 0.4526
@@ -25,7 +26,8 @@ Lasso (L1): R² = 0.4670
 
 L1 (Lasso) provided the best performance, slightly edging out L2 and the baseline. It also achieved this while simplifying the model by zeroing out 1 of the 10 features.
 
-###2. Classification (Breast Cancer)
+2. Classification (Breast Cancer)
+
 Here, the impact of regularization was highly significant.
 
 No Reg (Base): Accuracy = 93.86%
