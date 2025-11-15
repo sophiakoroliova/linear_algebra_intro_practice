@@ -12,6 +12,9 @@ Please, use NumPy, SciPy, scikit-learn and similar libs to implement the tasks.
 4. Matrix decompositions;
 5. Regularization.
 
+## Аналіз результатів та висновки до ЛАБ №5
+Висновки з результатів **регресії** (датасет Diabetes)
+
 ## Useful links
 
 * [Introduction to Linear Algebra for Applied Machine Learning with Python](https://pabloinsente.github.io/intro-linear-algebra)
